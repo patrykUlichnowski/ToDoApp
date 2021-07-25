@@ -11,3 +11,71 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.todo-item{
+  display: flex;
+  background: #333;
+  color: white;
+  font-size: 2rem;
+  justify-content: center;
+  align-items: center;
+  border-bottom: solid rgb(170, 168, 168) 1px;
+}
+
+.todo-item:last-of-type{
+  border: none;
+}
+
+.todo-item > p{
+  padding: 1em;
+  margin: 0;
+}
+
+.todo-item > p:hover{
+  color:rgb(170, 168, 168);
+}
+
+.todo-wrap{
+  display: grid;
+  align-items: center;
+  margin: 2em auto 2em auto;
+  width: 50vw;
+  padding: 2em;
+  background: #333;
+  border-radius: 0.5em;
+  box-shadow: 
+    0em 1em 0 -0.4em grey,
+    0em 2em 0 -0.8em lightgrey;
+}
+
+.contact-card > img{
+  width: 20vw;
+  height: 10vh;
+}
+
+.joke{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.joke > h1{
+  margin: 0;
+  padding: 1em;
+  font-size: 2rem;
+  background: #333;
+  color: white;
+  width: 100vw;
+  text-align: center;
+}
+
+.joke > p{
+  background-image: linear-gradient(to right, blue,purple);
+  color: white;
+  width: 100vw;
+  margin: 0;
+  font-size: 1rem;
+  text-align: center;
+  padding: 1em;
+}
