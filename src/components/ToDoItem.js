@@ -7,6 +7,9 @@ class ToDoItem extends React.Component {
         <input
           type='checkbox'
           checked={this.props.task.completed}
+          onChange={(event) => {
+            return this.props.changeMethod(this.props.task.id)
+          }}
         />
         <p>{this.props.task.text}</p>
       </div>
