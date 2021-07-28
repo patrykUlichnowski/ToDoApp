@@ -11,7 +11,10 @@ class ToDoItem extends React.Component {
             return this.props.changeMethod(this.props.task.id)
           }}
         />
-        <p>{this.props.task.text}</p>
+        <p
+          className={this.props.task.completed ? "completed" : null}>
+          {this.props.task.text}
+        </p>
       </div>
     )
   }

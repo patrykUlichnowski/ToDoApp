@@ -2,12 +2,12 @@ const todoData = [
   {
     id: 1,
     text: 'play some games',
-    completed: true
+    completed: false
   },
   {
     id: 2,
     text: 'clean dishes',
-    completed: true
+    completed: false
   },
   {
     id: 3,
