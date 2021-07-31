@@ -1,10 +1,12 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  /* font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+    sans-serif; */
+  font-family: 'Inter', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: rgb(238, 238, 238);
 }
 
 code {
@@ -14,7 +16,7 @@ code {
 
 .todo-header{
   display: flex;
-  background: #222;
+  background: #082032;
   color: white;
   justify-content: center;
   align-items: center;
@@ -23,7 +25,7 @@ code {
 
 .todo-item{
   display: flex;
-  background: #333;
+  background: #2C394B;
   color: white;
   font-size: 2rem;
   justify-content: center;
@@ -44,13 +46,18 @@ code {
   color:rgb(170, 168, 168);
 }
 
+.todo-item > input[type='checkbox']{
+  width: 2em;
+  height: 2em;
+}
+
 .todo-wrap{
   display: grid;
   align-items: center;
   margin: 2em auto 2em auto;
   width: 50vw;
   padding: 1em;
-  background: #333;
+  background: #334756;
   border-radius: 0.5em;
   box-shadow: 
     0em 1em 0 -0.4em grey,
@@ -61,4 +68,28 @@ code {
   text-decoration: line-through;
   color: gray;
   font-style: italic;
+}
+
+.adding-task{
+  display: flex;
+  width: 100%;
+}
+
+.adding-task > input{
+  width: 80%;
+  border: none;
+  min-height: auto;
+  font-size: 4rem;
+}
+
+.adding-task > button{
+  width: 20%;
+  border: none;
+  font-size: 3rem;
+  color: black;
+  background: #FF4C29;
+}
+
+.adding-task > button:hover, button:focus {
+  background: #c52404;
 }

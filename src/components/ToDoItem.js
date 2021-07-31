@@ -8,7 +8,7 @@ class ToDoItem extends React.Component {
           type='checkbox'
           checked={this.props.task.completed}
           onChange={(event) => {
-            return this.props.changeMethod(this.props.task.id)
+            return this.props.handleChange(this.props.task.id)
           }}
         />
         <p
