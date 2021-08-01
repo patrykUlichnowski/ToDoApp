@@ -1,32 +1,50 @@
 import React from "react";
 import ToDoItem from "./components/ToDoItem";
-import todoData from "./components/todoData"
+// import this.state.data from "./components/todoData"
 class App extends React.Component {
 
   constructor() {
     super()
+    let importedData = JSON.parse(localStorage.getItem("userList"))
+    if (!importedData) {
+      importedData = []
+    }
     this.state = {
-      data: todoData,
-      newtodo: '',
+      data: importedData,
+      newtodo: ''
     }
     this.handleChange = this.handleChange.bind(this)
     this.handleInput = this.handleInput.bind(this)
     this.handleAppending = this.handleAppending.bind(this)
+    this.handleRemove = this.handleRemove.bind(this)
+  }
+
+  async handleRemove(id) {
+    // removing object from the array
+    const indextoremove = this.state.data.filter((item) => item.id !== id);
+    await this.setState({
+      data: indextoremove
+    })
+    await localStorage.setItem('userList', JSON.stringify(this.state.data));
   }
 
   async handleAppending() {
     // here we grab last key from already existing tasks and we push to our array new task with proper key
-    const lastKey = todoData[todoData.length - 1].id;
-    await todoData.push({
-      id: lastKey + 1,
+    let lastKey = 1
+    if (this.state.data.length > 0) {
+      lastKey = this.state.data[this.state.data.length - 1].id + 1;
+    }
+    await this.state.data.push({
+      id: lastKey,
       text: this.state.newtodo,
       completed: false
     })
     // when the state is updated whole page is also render
     this.setState({
-      data: todoData,
+      data: this.state.data,
       newtodo: "",
     })
+    await localStorage.setItem('userList', JSON.stringify(this.state.data));
   }
 
   handleChange(id) {
@@ -56,7 +74,7 @@ class App extends React.Component {
   render() {
     // maping all items from list to array of new components
     const todos = this.state.data.map((item) => {
-      return <ToDoItem task={item} key={item.id} handleChange={this.handleChange} />
+      return <ToDoItem task={item} key={item.id} handleChange={this.handleChange} handleRemove={this.handleRemove} />
     })
     return (
       <div className='todo-wrap'>

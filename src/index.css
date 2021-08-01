@@ -51,6 +51,20 @@ code {
   height: 2em;
 }
 
+.todo-item > button{
+  width: 2em;
+  height: 2em;
+  background: red;
+  border:none;
+  font-size: 1rem;
+  padding: 0;
+  font-weight: bold;
+}
+
+.todo-item > button:hover{
+  background: darkred;
+}
+
 .todo-wrap{
   display: grid;
   align-items: center;

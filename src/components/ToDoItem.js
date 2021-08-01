@@ -1,6 +1,7 @@
 import React from "react";
 
 class ToDoItem extends React.Component {
+
   render() {
     return (
       <div className='todo-item'>
@@ -12,9 +13,11 @@ class ToDoItem extends React.Component {
           }}
         />
         <p
-          className={this.props.task.completed ? "completed" : null}>
+          className={this.props.task.completed ? "completed" : null}
+        >
           {this.props.task.text}
         </p>
+        <button onClick={() => { this.props.handleRemove(this.props.task.id) }}>x</button>
       </div>
     )
   }
