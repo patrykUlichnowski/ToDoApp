@@ -68,7 +68,8 @@ code {
 .todo-wrap{
   display: grid;
   align-items: center;
-  margin: 2em auto 2em auto;
+  margin: auto;
+  margin-top: 2em;
   width: 50vw;
   padding: 1em;
   background: #334756;
@@ -106,4 +107,15 @@ code {
 
 .adding-task > button:hover, button:focus {
   background: #c52404;
+}
+
+footer{
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  padding: 1em;
+  font-size: 1.5rem;
+  background: rgb(190, 190, 190);
+  opacity: 0.5;
 }

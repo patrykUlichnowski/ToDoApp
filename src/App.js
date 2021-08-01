@@ -1,5 +1,6 @@
 import React from "react";
 import ToDoItem from "./components/ToDoItem";
+import Footer from "./components/Footer";
 // import this.state.data from "./components/todoData"
 class App extends React.Component {
 
@@ -77,24 +78,27 @@ class App extends React.Component {
       return <ToDoItem task={item} key={item.id} handleChange={this.handleChange} handleRemove={this.handleRemove} />
     })
     return (
-      <div className='todo-wrap'>
-        <div>
-          {/* here is all user tasks */}
-          <div className='todo-header'>
-            <h1>List of things you have to do!</h1>
+      <div>
+        <div className='todo-wrap'>
+          <div>
+            {/* here is all user tasks */}
+            <div className='todo-header'>
+              <h1>List of things you have to do!</h1>
+            </div>
+            {todos}
           </div>
-          {todos}
+          {/* here user can add new task to his list */}
+          <div className="adding-task">
+            <input
+              type='text'
+              name='newtodo'
+              value={this.state.newtodo}
+              onChange={this.handleInput}
+            />
+            <button onClick={this.handleAppending}>add task</button>
+          </div>
         </div>
-        {/* here user can add new task to his list */}
-        <div className="adding-task">
-          <input
-            type='text'
-            name='newtodo'
-            value={this.state.newtodo}
-            onChange={this.handleInput}
-          />
-          <button onClick={this.handleAppending}>add task</button>
-        </div>
+        <Footer />
       </div>
     )
   }
